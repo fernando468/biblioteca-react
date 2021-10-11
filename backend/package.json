@@ -1,0 +1,80 @@
+{
+  "name": "backend",
+  "description": "",
+  "version": "0.0.0",
+  "homepage": "",
+  "private": true,
+  "main": "src",
+  "keywords": [
+    "feathers"
+  ],
+  "author": {
+    "name": "Fernando",
+    "email": "fernando468@outlook.com"
+  },
+  "contributors": [],
+  "bugs": {},
+  "directories": {
+    "lib": "src",
+    "test": "test/",
+    "config": "config/"
+  },
+  "engines": {
+    "node": "^14.0.0",
+    "yarn": ">= 0.18.0"
+  },
+  "scripts": {
+    "test": "yarn run lint && yarn run compile && yarn run mocha",
+    "lint": "eslint src/. test/. --config .eslintrc.json --ext .ts --fix",
+    "dev": "ts-node-dev --no-notify src/",
+    "heroku-postbuild": "yarn run compile",
+    "start": "node lib/",
+    "mocha": "ts-mocha \"test/**/*.ts\" --recursive --exit",
+    "compile": "shx rm -rf lib/ && tsc"
+  },
+  "standard": {
+    "env": [
+      "mocha"
+    ],
+    "ignore": []
+  },
+  "types": "lib/",
+  "dependencies": {
+    "@feathersjs/authentication": "^4.5.11",
+    "@feathersjs/authentication-local": "^4.5.11",
+    "@feathersjs/authentication-oauth": "^4.5.11",
+    "@feathersjs/configuration": "^4.5.11",
+    "@feathersjs/errors": "^4.5.11",
+    "@feathersjs/express": "^4.5.11",
+    "@feathersjs/feathers": "^4.5.11",
+    "@feathersjs/transport-commons": "^4.5.11",
+    "@types/ramda": "^0.27.44",
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "feathers-sequelize": "^6.2.0",
+    "helmet": "^4.3.1",
+    "pg": "^8.7.1",
+    "ramda": "^0.27.1",
+    "sequelize": "^6.3.5",
+    "serve-favicon": "^2.5.0",
+    "winston": "^3.0.0"
+  },
+  "devDependencies": {
+    "@types/bluebird": "^3.5.36",
+    "@types/compression": "^1.7.2",
+    "@types/cors": "^2.8.12",
+    "@types/jsonwebtoken": "^8.5.5",
+    "@types/mocha": "^9.0.0",
+    "@types/serve-favicon": "^2.5.3",
+    "@types/validator": "^10.0.0",
+    "@typescript-eslint/eslint-plugin": "^4.31.0",
+    "@typescript-eslint/parser": "^4.31.0",
+    "axios": "^0.21.4",
+    "eslint": "^7.17.0",
+    "mocha": "^8.2.1",
+    "shx": "^0.3.3",
+    "ts-mocha": "^8.0.0",
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.1.3"
+  }
+}
